@@ -1,10 +1,10 @@
 import { Robo } from "./robo"
-import { DirecaoRoboEnum } from "./direcao-robo-enum"
+import { DirecaoEnum } from "./direcao-enum"
 
 describe('RoboTest', () => {
   it('Deve ir para norte', () => {
     let marsRover =  new Robo(5,5)
-		marsRover.andar(DirecaoRoboEnum.N.toString())
+		marsRover.andar(DirecaoEnum.N.toString())
     expect(marsRover.getX()).toEqual(5)
     expect(marsRover.getY()).toEqual(4)
   })
