@@ -45,8 +45,7 @@ import { DirecaoRoboEnum, getDirecaoEnumfromValue } from "./direcao-robo-enum";
 
 	decrementarY() {
 		this.validarLimiteInferiorY();
-		this.y--;
-		
+		this.y--;		
 	}
 
 	incrementarX() {

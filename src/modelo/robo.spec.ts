@@ -49,4 +49,9 @@ describe('RoboTest', () => {
     expect(marsRover.getX()).toEqual(10)
     expect(marsRover.getY()).toEqual(10)
   })
+
+  it('Deve exibir mensagem ao informar direcao invalida', () => {
+    let marsRover =  new Robo(5,5)
+    expect(() => marsRover.andar("X")).toThrowError("Direção inválida.")
+  })
 })

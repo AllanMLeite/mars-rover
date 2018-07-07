@@ -5,8 +5,14 @@ export enum DirecaoRoboEnum {
     O = "O"
 }
 
+const keys = Object.keys(DirecaoRoboEnum)
+
 export function getDirecaoEnumfromValue(value : String ) : DirecaoRoboEnum {
-    const keys = Object.keys(DirecaoRoboEnum)
-    return DirecaoRoboEnum[keys.find(x => x == value)]
+    let direcaoEnum = DirecaoRoboEnum[keys.find(x => x == value)]
+
+    if(direcaoEnum == undefined)
+        throw new Error("Direção inválida.")
+
+    return direcaoEnum
 }
 
