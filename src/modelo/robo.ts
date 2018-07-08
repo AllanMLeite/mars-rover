@@ -1,4 +1,5 @@
 import { DirecaoEnum, getDirecaoEnumfromValue } from "./direcao-enum"
+import { DirecaoStrategy } from "../service/direcao-strategy";
 
  export class Robo{
 
@@ -14,23 +15,9 @@ import { DirecaoEnum, getDirecaoEnumfromValue } from "./direcao-enum"
 		this.y = y
 	}
 
-	ir(direcao : DirecaoEnum) {
-        switch (direcao) {
-            case DirecaoEnum.N:
-                this.decrementarY()                
-                break        
-            case DirecaoEnum.S:
-                this.incrementarY()                
-                break        
-            case DirecaoEnum.L:
-                this.incrementarX()                
-                break        
-            case DirecaoEnum.O:
-                this.decrementarX()                
-                break        
-            default:
-                break
-        }
+	ir(direcao : any) {
+		let strategy : DirecaoStrategy = direcao.servico
+		strategy.ir(this)
 	}
 
 	andar(passos : String) {

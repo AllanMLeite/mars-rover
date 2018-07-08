@@ -4,7 +4,7 @@ import { DirecaoEnum } from "./direcao-enum"
 describe('RoboTest', () => {
   it('Deve ir para norte', () => {
     let marsRover =  new Robo(5,5)
-		marsRover.andar(DirecaoEnum.N.toString())
+		marsRover.andar("N")
     expect(marsRover.getX()).toEqual(5)
     expect(marsRover.getY()).toEqual(4)
   })
